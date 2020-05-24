@@ -4,6 +4,8 @@ import "./style.scss";
 import ufcLogo from "../../assets/brasao_ufc_horizontal_cor.svg";
 import {Button, Form} from "react-bootstrap";
 
+import api from '../../services/api'
+
 export default class Login extends Component{
     constructor(props) {
         super(props);
@@ -24,8 +26,17 @@ export default class Login extends Component{
     }
 
     handleSubmit = e => {
-        console.log(this.state)
+        const { username, password } = this.state
 
+        const response = api.post('/authenticate', {
+            username: username,
+            password: password,
+        }, { withCredentials: true }).then(resp => {
+            console.log("logado", resp)
+            console.log(response)
+        }).catch(error => {
+            console.log("erro", error)
+        })
         e.preventDefault();
     }
 
@@ -50,6 +61,7 @@ export default class Login extends Component{
                                         placeholder="Usuário"
                                         value={ this.state.username }
                                         onChange={ this.handleInputChange }
+                                        required
                                     />
                                 </Form.Group>
 
@@ -60,6 +72,7 @@ export default class Login extends Component{
                                         placeholder="Senha"
                                         value={ this.state.password }
                                         onChange={ this.handleInputChange }
+                                        required
                                     />
                                 </Form.Group>
                                 <Button variant="primary" type="submit" block>
