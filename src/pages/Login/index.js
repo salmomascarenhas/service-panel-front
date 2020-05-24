@@ -28,21 +28,21 @@ export default class Login extends Component{
     handleSubmit = e => {
         const { username, password } = this.state
 
-        const response = api.post('/authenticate', {
+        api.post('/authenticate', {
             username: username,
             password: password,
-        }, { withCredentials: true }).then(resp => {
-            console.log("logado", resp)
-            console.log(response)
+        }, { withCredentials: true })
+            .then(resp => {
+            console.log(resp)
         }).catch(error => {
-            console.log("erro", error)
+            console.log(error)
         })
         e.preventDefault();
     }
 
     render() {
         return (
-            <div>
+            <>
                 <div className="base-container">
                     <div className="logo">
                         <img src={ ufcLogo } alt="ufc logo"/>
@@ -83,7 +83,7 @@ export default class Login extends Component{
                     </div>
                     <div className="footer mt-auto" />
                 </div>
-            </div>
+            </>
         );
     }
 }
