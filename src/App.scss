@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+$theme-colors: (
+        "info": tomato,
+        "primary": #005D9A
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
