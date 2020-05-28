@@ -30,10 +30,7 @@ export default function Login(){
                     </Form>
                 </main>
 
-                <footer>
-                    <div>
-                        <p> Universidade Federal do Ceará - 2020 </p>
-                    </div>
+                <footer><p> © Copyright | Universidade Federal do Ceará - 2020 </p>
                 </footer>
 
             </div>
