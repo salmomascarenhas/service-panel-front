@@ -32,7 +32,7 @@ export default function Login(){
 
                 <footer>
                     <div>
-                        <p>{'Universidade Federal do Ceará - 2020'}</p>
+                        <p> Universidade Federal do Ceará - 2020 </p>
                     </div>
                 </footer>
 
