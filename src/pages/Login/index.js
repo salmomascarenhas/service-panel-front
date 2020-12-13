@@ -1,31 +1,23 @@
 import React from 'react';
 import '../../App.scss';
 import "./style.scss";
-import { useDispatch } from "react-redux";
 import ufcLogo from "../../assets/brasao_ufc_horizontal_cor.svg";
 import { Form, Input } from '@rocketseat/unform';
 
-import { signInRequest } from "../../store/modules/auth/actions";
-
-export default function Login(){
-    const dispatch = useDispatch();
-
-    function handleSubmit({username, password}){
-        dispatch(signInRequest(username, password));
-    }
+export default function Login() {
 
     return (
         <>
             <div className='container'>
                 <header>
-                    <img src={ufcLogo} alt='UFC logo'/>
+                    <img src={ufcLogo} alt='UFC logo' />
                 </header>
-                    
+
                 <main>
                     <h1>Entrar</h1>
                     <Form>
-                        <Input type='username' name='username' placeholder='Usuário' required/>
-                        <Input type='password' name='password' placeholder='Senha' required/>
+                        <Input type='username' name='username' placeholder='Usuário' required />
+                        <Input type='password' name='password' placeholder='Senha' required />
                         <button>Entrar</button>
                     </Form>
                 </main>
