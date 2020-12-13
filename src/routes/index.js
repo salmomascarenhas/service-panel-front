@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
+import Patients from '../pages/Patients'
 
 export default function Index() {
     return (
